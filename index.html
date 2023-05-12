@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Atributos Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
-    <title>Andrés Cooking con Bootstrap</title>
-
+    <!-- Titulo -->
+    <title>Andrés Cooking</title>
     <!-- Link Fontawesome -->
     <script src="https://kit.fontawesome.com/587aee5973.js" crossorigin="anonymous"></script>
 
     <!-- Styles CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <!--Header-->
@@ -26,13 +28,13 @@
         <!-- Logo -->
         <nav>
             <div class="nav-container">
-                <h1 class="title__header">@andrés cooking</h1>
+                <h1 class="title__header">@andres cooking</h1>
             <!-- Icono Hamburguesa para responsive -->
                 <label for="menu" class="nav__label">
                     <i class="fa-solid fa-bars" style="color: #f5f4f4;"></i>
                 </label>
                 <input type="checkbox" class="nav_input" id="menu">
-
+            <!-- Menu -->
                 <div class="nav-menu">
                     <a class="item__nav" href="./pages/glosario.html"> Glosario</a>
                     <a class="item__nav" href="./pages/recomienda.html"> Tienda Cooking</a> 
@@ -53,7 +55,7 @@
                 mis <br> #Recetascooking</h1> 
                 <button class="btn_portada">
                     <a class="btn_link" href="./pages/recetas.html">
-                    <i class="fa-solid fa-share fa-fade"></i>  Ingresa aqui</a>
+                    <i class="fa-solid fa-share fa-fade"></i> Ingresa aqui</a>
                 </button>
             </div>
         </section>
@@ -70,37 +72,78 @@
             <div class="elementos_destacados">
                 <a href="https://www.instagram.com/p/CoSZoZlPUgh/" target="_blank">
                     <img class="img_galeria" src="./img/Canele.jpg" alt="Imagen y video de receta de Canele: biscochuelos franceses">
+                    <div class="img-text">
+                        <div class="content">
+                            <h2>Canelé</h2>
+                            <p>Publicado hace 7 horas</p>
+                            <p>Categoria: Meriendas <br> Dificultad: 
+                                <i class="fa-solid fa-star" style="color: #2f3846;"></i>
+                            </p>
+                        </div>
+                    </div>
                 </a>
             </div>
             <!-- imagen 2 -->
             <div class="elementos_destacados">
                 <a href="https://www.instagram.com/p/CpQFxD6OEI0/" target="_blank">
                     <img class="img_galeria" src="./img/recipe 1.jpg" alt="Imagen y video de receta de pasta, espinaca y queso">
+                    <div class="img-text">
+                        <div class="content">
+                            <h2>Pasta de Espinaca <br> y Queso</h2>
+                            <p>Publicado hace 3 dias</p>
+                            <p>Categoria: Almuerzos <br> Dificultad: <i class="fa-solid fa-star" style="color: #2f3846;"></i></p>
+                        </div>
+                    </div>
                 </a>
             </div>
             <!-- imagen 3 -->
             <div class="elementos_destacados">
                 <a href="https://www.instagram.com/p/CoKmHsAtL9d/" target="_blank">
                     <img class="img_galeria" src="./img/Garlic Naan.jpg" alt="Imagen y video de receta de garlic naan">
-                    </a>
+                    <div class="img-text">
+                        <div class="content">
+                            <h2>Garlic Naan</h2>
+                            <p>Publicado hace 3 dias</p>
+                            <p>Categoria: Desayunos <br> Dificultad: <i class="fa-solid fa-star" style="color: #2f3846;"></i></p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <!-- imagen 4 -->
             <div class="elementos_destacados">
                 <a href="https://www.instagram.com/p/Cp7jqdkPD17/" target="_blank">
                     <img class="img_galeria" src="./img/arepa-pernil2.jpg" alt="Imagen y video de receta de arepa con pernil, queso y tomate">
-                    </a>
+                    <div class="img-text">
+                        <div class="content">
+                            <h2>Arepa con Pernil</h2>
+                            <p>Publicado hace 5 dias</p>
+                            <p>Categoria: Cenas <br> Dificultad: <i class="fa-solid fa-star" style="color: #2f3846;"></i></p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <!-- imagen 5 -->
             <div class="elementos_destacados">
                 <a href="https://www.instagram.com/p/CqvFaSWJwv1/" target="_blank">
                     <img class="img_galeria" src="./img/waffles.jpg" alt="Imagen y video de receta de waffles con crema batida, fresas y arándanos">
-                    </a>
+                    <div class="img-text">
+                        <div class="content">
+                            <h2>Waffles</h2>
+                            <p>Publicado hace 6 dias</p>
+                            <p>Categoria: Desayunos <br> Dificultad: 
+                                <i class="fa-solid fa-star" style="color: #2f3846;"></i>
+                                <i class="fa-solid fa-star" style="color: #2f3846;"></i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
         <!-- Sección Tips -->
         <div class="recipes__featured">
             <h2 class="title__section2">"Si tienes medio limón con clavos de olor en tu nevera, te ayudará absorver esos malos olores y a la vez aromatizará tu nevera"</h2>
-            <h3 class="paragraph__section2">Descubre más de nuestros #CookingTips haciendo click</h3> 
+            <h3 class="paragraph__section2">Descubre más de nuestros #CookingTips haciendo click
+            </h3> 
             <!-- boton link tips -->
             <button class=" btn_tips">
                 <a class="btn_a" href="./pages/tips.html">

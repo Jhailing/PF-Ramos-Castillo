@@ -1,0 +1,618 @@
+// main index
+main{
+    // Seccion principal
+    .section_main{
+        @include box-flex(center, center, nowrap);
+        background-color: $color-second;
+        color: $color-letter;
+        @include extra-desk{
+            flex-wrap: wrap;  
+        }
+        
+        .img-main{
+            @extend .background_style;
+            width: 60%;
+            height: $height;
+            z-index: 0;  
+        }
+        .container-title{
+            text-align: center;
+            margin-right: 50px;
+            z-index: 1;
+            font-size: 30px;
+            @include mobile{
+                margin-right: 0px;
+            }
+            .title-portada{
+                line-height: 60px;
+                font-style: italic;
+                font-family:$font-second;
+                letter-spacing: 2px;
+                text-shadow: $shadow-one;
+                @include mobile {
+                    font-size: 35px;      
+                }
+                @include mini-mobile{
+                    font-size: 28px;
+                    line-height: 45px;
+
+                }
+            }
+            .btn_portada{
+                font-size: 22px;
+                width: 180px;
+                height: 50px;
+                border-radius: 10px;
+                margin-top: 35px;
+                font-family:$font-ppal;
+                background-color: $color-btn;
+                text-decoration: none;
+                .btn_link{
+                    @extend .item__nav;
+                    text-decoration: none;
+                    color: #4d4837;
+                    &:hover{
+                        color: #ebeae0;
+                    }
+                } 
+                @include mobile{
+                    margin-top: 5px;
+                    margin-bottom: 25px;
+                }
+                @include extra-desk{
+                    margin-bottom: 25px;
+                } 
+            }
+        }
+    }
+
+    // Sección recetas destacadas
+    .container_section_destacada{
+        @include box-flex(center, center, nowrap);
+        width: $width;
+        height: 200px;
+        background: $background-lin;
+        .title__section2, .paragraph__section2{
+            font-size: 30px;
+            margin-left: 25px;
+            text-align: center;
+            color: $color-paragraph;
+            @include mini-mobile{
+                font-size: 28px;
+                margin-left: 0px;
+                margin: 15px 15px;
+                padding: 5px 5px;
+            }
+        }   
+    }
+    // Carrousel
+    .carrousel{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        .elementos_destacados{
+            flex: 1 0 auto;
+            width: 300px;
+            height: 300px;
+            margin: 25px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 7px;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                transition: all .7s ease-in-out;
+            }
+            &:hover::before{
+                top: 0;
+                right: calc(100% - 5px);
+                z-index: 8;
+            }
+            &:hover .img-text{
+                top: 0;
+                right: 0;
+            }
+            .img_galeria{
+                width: $width;
+                height: 100%;
+                border-radius: 5px;
+                box-shadow: 0 0 6px black;
+                transition: all 0.8s ease;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+            .img-text{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background: rgb(241, 227, 150);
+                color: #100c0b;
+                opacity: 0.8;
+                top: 0;
+                right: 100%;
+                transition: all .7s ease-in-out;
+                .content h2{
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+                .content p{
+                    padding: 8px;
+                    margin: 5px 5px;
+                }
+            }
+        }
+    }
+    // Sección Tips
+    .recipes__featured{
+        width: $width;
+        height: 230px;
+        text-align: center;
+        background: $background-lin;
+        padding: 15px;
+        @include extra-desk{
+            height: 300px;
+        }
+        @include mobile{
+            height: 320px;
+        }
+        .title__section2, .paragraph__section2{
+            font-size: 28px;
+            margin-top: 15px;
+            font-family:$font-second;
+            color: $color-paragraph;
+            @include mobile{
+                font-size: 24px;
+            }
+            @include tablet{
+                font-size: 26px;
+                margin-top: 20px;
+            }
+            @include mini-mobile{
+                font-size: 20px;
+            }
+        }
+        .btn_tips{
+            border-radius: 5px;
+            width: 100px; 
+            height: 40px;
+            margin-top: 25px;
+            background-color: $color-btn;
+            border: $border;
+            @include extra-desk{
+                width: 120px;
+                height: 50px;    
+            }
+            @include mobile{
+                width: 100px;
+                height: 40px;
+                margin-top: 10px;
+                
+            }
+            @include mini-mobile{
+                margin-top: 20px;
+            }
+            &:hover{
+                box-shadow: 0 0 6px black
+            }
+            .btn_a{
+                @extend .item__nav;
+                font-size: 20px;
+                color: $color-paragraph;
+                text-decoration: none;
+                .fa-thumbs-up{
+                    margin-right: 5px;
+                }
+                @include extra-desk{
+                    font-size: 24px;
+                }    
+            }
+        }
+    }
+// Sección Form
+    .form-section{
+        @include displayForm();
+        background-color: $color-letter;  
+        .container_form{
+            @extend .background_style;
+            width: 50%;
+            background-image: url(../img/Img-form.jpg);
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 5px;
+            @include tablet{
+                width: 100%;
+            }
+                .title-form{
+                    font-size: 32px;
+                }
+                form{
+                    label{
+                        font-size: 14px;
+                        text-transform: capitalize;
+                    }
+                    input, textarea{
+                        padding: 15px 20px;
+                        border-radius: 3px;
+                        border: 2px solid transparent;
+                        width: 90%;
+                        margin: 3px 0;
+                        &::placeholder{
+                            font-size: 16px;
+                            color: #5D698D;
+                            border: $border;
+                        }
+                    }
+                    .btn-form{
+                        @include displayForm();
+                        width: $width;
+                        margin-top: 15px;
+                        .btn-send{
+                            width: 40%;
+                            height: 40px;
+                            border: $border;
+                            border-radius: 5px;
+                            background-color: $color-btn;
+                            &:hover{
+                                background-color:rgb(227, 140, 9);
+                                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                            }
+                        }
+                    }
+                }
+            // Sección Social Media
+                .network{
+                    @include displayForm();
+                    margin-top: 30px;
+                    @include tablet{
+                        text-align: center;
+                        margin-top: 20px;
+                        margin-bottom: 8px;
+                    }
+                }
+                .social_media{
+                    width: $width;
+                    display: flex;
+                    justify-content: space-around;
+                    margin: 20px 20px 20px;
+                    margin-top: 20px;
+                    @include tablet{
+                        margin: 0px;
+                    }
+                    .logofa, .logoIg, .logoYT, .logoTT{
+                        padding: 10px 30px;
+                        border-radius: 3px;
+                        display: inline-block;
+                        font-size: 24px;
+                        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                        outline: none;
+                        border: $border;
+                        @include tablet{
+                            padding: 5px 20px;
+                        }
+                        @include mobile{
+                            padding: 5px 15px;
+                        }
+                        @include mini-mobile{
+                            padding: 3px 10px;
+                        }
+                        &:hover{
+                            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
+                            0px 10px 20px rgba(43, 20, 11, 0.315);
+                            transition: all .5s ease-in-out 0s;
+                        }
+                        &.logofa:hover{
+                            background-color: #1771e6;
+                            .fa-facebook-f{
+                                color: $color-media;
+                            }
+                        }
+                        &.logoIg:hover{
+                        background-color: $color-media;
+                            .fa-instagram{
+                                background:linear-gradient(49deg, #f9ed32,#ee2a7b,#002aff) ;
+                                color: $color-media;
+                                border-radius: 7px;
+                            }
+                        }
+                        &.logoYT:hover{
+                            .fa-youtube{
+                                color: red;
+                            }
+                        }
+                        &.logoTT:hover{
+                            background-color: #100c0b;
+                            .fa-tiktok{
+                                color: $color-media;
+                            }
+                        }  
+                    }
+                }  
+        }
+    }
+}
+
+// main recetas html
+.main_recipes{
+    width: $width;
+    .to-back{
+        height: 30px;
+        border: $border;
+        margin-top: 15px;
+        margin-left: 15px;
+        .btn__return{
+            text-decoration: none;
+            color: $color-second;
+            &:hover{
+            text-shadow: 3px 3px 10px orange;
+            }
+        }
+    }
+    .recipes-title{
+        @include box-flextwo(center,center);
+        width: $width;
+        height: 50px;
+        .input_recipes{
+            width: 500px;
+            height: 50px;
+            border-radius: 25px;
+            padding: 10px;
+            border: 2px solid transparent;
+            background-color: rgb(246, 232, 214);
+            @include mobile{
+                width: 70%;
+            }
+        }
+        .search-btn{
+            font-size: 35px;
+            background-color: $color-media;
+            border: $border;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    }
+    .container_paragraph{
+        width: $width;
+        margin-top: 25px;
+        margin: 10px 10px;
+        text-align: center;
+        @include tablet {
+            width: $width;
+            margin: 0px 0px;
+        }
+        h1{
+            font-size: 36px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .paragraph__recipes{
+            font-size: 20px; 
+            @include tablet {
+                width: 90%;
+                text-align: center;
+                font-size: 18px;
+                margin: 5px;
+            }
+        }
+    }
+    .container-galeria{
+        width: $width;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        margin: 30px 30px;
+        padding: 10px 10px;
+        @include tablet {
+            margin: 0px;
+        }
+        .card{
+            box-shadow: 0 0 6px black;
+            transition: all 0.8s ease;
+            &:hover{
+                transform: scale(0.9);
+            }
+            .img-box{
+                max-width: 400px;
+                margin: 15px;
+                @include mini-mobile{
+                    max-width: 250px;
+                }
+            }       
+        }
+    }
+}
+
+// Main HTML Recomienda
+.main_recomienda{
+    width: $width;
+    background-color: beige;
+    .to-back{
+        height: 30px;
+        border: $border;
+        padding: 15px;
+        margin-left: 15px;
+        .btn__return{
+            text-decoration: none;
+            color: $color-second;
+            &:hover{
+            text-shadow: 3px 3px 10px orange;
+            }
+        }
+    }
+    .container_paragraph{
+            width: $width;
+            margin-top: 25px;
+            margin: 10px 10px;
+            text-align: center;
+            @include tablet {
+                width: $width;
+                margin: 0px 0px;
+            }
+            h1{
+                font-size: 36px;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
+            .paragraph__recommendations{
+                font-size: 20px; 
+                @include tablet {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 18px;
+                    margin: 5px;
+                }
+            }
+        }
+        .container-galeria{
+            width: $width;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            margin: 30px 30px;
+            padding: 10px 10px;
+            @include tablet {
+                margin: 0px;
+            }
+            .card{
+                box-shadow: 0 0 6px black;
+                border: none;
+                border-radius: 7px;
+                position: relative;
+                overflow: hidden;
+                height: 330px;
+                margin: 30px 30px;
+                padding: 10px 10px;
+                transition: all .9s ease-in-out;
+                &:hover .img-text{
+                    top: 0;
+                    right: 0;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 5px;
+                    height: 100%;
+                    transition: all .9s ease-in-out;
+                }
+                &:hover::before{
+                    top: 0;
+                    right: calc(100% - 5px);
+                    z-index: 8;
+                }
+                .img-box{
+                    max-width: 400px;
+                    background-size: cover;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                    @include mini-mobile{
+                        max-width: 250px;
+                        height: 300px;
+                    }
+                }
+                .img-text{
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    background: $background-card;
+                    color: #100c0b;
+                    opacity: 0.8;
+                    top: 0;
+                    right: 100%;
+                    transition: all .9s ease-in-out;
+                    .content{
+                        padding: 10%;
+                        h2{
+                            font-size: 24px;
+                            text-transform: uppercase;
+                            margin-bottom: 15px;
+                        }
+                        p{
+                            line-height: 1.5;
+                            font-size: 18px;
+                        }
+                    }
+                }     
+            }
+        }
+        .btn-recomienda{
+            @include box-flextwo(center,center);
+            width: $width;
+            height: 100px;
+            button{
+                width: 200px;
+                height: 35px;
+                border-radius: 8px;
+                border: $border;
+                box-shadow: 0 0 6px black;
+                transition: all 0.8s ease;
+                background-color: $color-btn;
+                a{
+                    text-decoration: none;
+                    color: #100c0b;
+                }
+            }
+        }
+}
+// Tips main HTML 
+.main_tips{
+    .paragraph__tips{
+        font-size: 20px; 
+        @include tablet {
+            width: 90%;
+            text-align: center;
+            font-size: 18px;
+            margin: 5px;
+        }
+    }
+    .container-galeria{
+        .card{
+            .img-text{
+                background:$background-grad;
+            }
+        }
+    }   
+}
+
+
+// Glosario main HTML
+nav{
+    display: flex;
+    justify-content: center;
+    .items{
+        @include box-flextwo(center,center);
+        max-width: 720px;
+        width: 100%;
+        @include mobile{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .item{
+            padding: 7px 25px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $color-btn;
+            border: 2px solid $color-btn;
+            border-radius: 50px;
+            cursor: pointer;
+            &:hover{
+                color: white;
+                background-color: $color-btn;
+            }
+        }
+    }
+}
